@@ -1,7 +1,6 @@
 dist: xenial  # required for Python >= 3.7
 language: python
 python:
-  - "3.5"
   - "3.6"
   - "3.7"
   - "3.8"
@@ -11,7 +10,7 @@ matrix:
     - python: "nightly"
 install:
   - "pip install --editable .[with_everything]"
-  - "pip install safety pipenv numpy tzlocal nose coverage coveralls -U"
+  - "pip install safety pipenv numpy tzlocal nose coverage coveralls py -U"
   - "pip freeze | safety check --stdin"
 script:
   - "nosetests -s --with-coverage --cover-inclusive --cover-package=prospector tests/"

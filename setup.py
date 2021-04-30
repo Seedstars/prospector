@@ -11,8 +11,8 @@ with open("prospector/__pkginfo__.py") as f:
     exec(f.read())
 _VERSION = globals()["__version__"]
 
-if sys.version_info < (3, 5):
-    raise Exception("Prospector %s requires Python 3.5 or higher." % _VERSION)
+if sys.version_info < (3, 6):
+    raise Exception("Prospector %s requires Python 3.6 or higher." % _VERSION)
 
 
 _PACKAGES = find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"])
@@ -30,9 +30,9 @@ _INSTALL_REQUIRES = [
     "pycodestyle<2.7.0,>=2.6.0",
     "pep8-naming>=0.3.3,<=0.10.0",
     "pydocstyle>=2.0.0",
-    "pylint==2.5.3",
+    "pylint==2.7.2",
     "pylint-django<2.2.0",
-    "astroid==2.4.1",
+    "astroid==2.5.1",
 ]
 
 
@@ -46,7 +46,6 @@ _CLASSIFIERS = [
     "Intended Audience :: Developers",
     "Operating System :: Unix",
     "Topic :: Software Development :: Quality Assurance",
-    "Programming Language :: Python :: 3.5",
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
